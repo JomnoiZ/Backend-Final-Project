@@ -3,6 +3,7 @@ const dotenv = require("dotenv");
 const connectDB = require("./config/db");
 const auth = require("./routes/auth");
 const exhibitions = require("./routes/exhibitions");
+const users = require("./routes/users");
 const booking = require("./routes/booking");
 const cookieParser = require("cookie-parser");
 const mongoSanitize = require("express-mongo-sanitize");
@@ -59,6 +60,7 @@ app.use(cors({
 app.use("/api/v1/auth", auth);
 app.use("/api/v1/exhibitions", exhibitions);
 app.use("/api/v1/booking", booking);
+app.use("/api/v1/users", users);
 
 // Swagger configuration
 const swaggerOptions = {
