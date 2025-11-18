@@ -1,5 +1,8 @@
 // @desc    Update user
 // @route   PUT /api/v1/users
+
+const User = require("../models/User");
+
 // @access  Private
 exports.updateUser = async (req, res) => {
   try {

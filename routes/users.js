@@ -4,11 +4,11 @@ const { protect } = require('../middleware/auth');
 const usersController = require('../controllers/users');
 
 /**
- * @swagger
- * tags:
- *   name: Users
- *   description: User management API endpoints
- */
+* @swagger
+* tags:
+*   name: Users
+*   description: User management API endpoints
+*/
 
 /**
 * @swagger
@@ -70,6 +70,6 @@ const usersController = require('../controllers/users');
 */
 
 router.route('/')
-  .put(protect, usersController.updateUser);
+  .patch(protect, usersController.updateUser);
 
 module.exports = router;
