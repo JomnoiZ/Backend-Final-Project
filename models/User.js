@@ -31,6 +31,10 @@ const UserSchema = new mongoose.Schema({
     minLength: 6,
     select: false,
   },
+  profilePicture: {
+    type: String,
+    required: [true, "Please add a profile picture URL"],
+  }
 }, { timestamps: true });
 
 

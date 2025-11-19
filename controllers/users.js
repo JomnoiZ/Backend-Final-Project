@@ -6,7 +6,7 @@ const User = require("../models/User");
 // @access  Private
 exports.updateUser = async (req, res) => {
   try {
-    const { name, email, tel, oldPassword, newPassword, confirmNewPassword } = req.body;
+    const { name, email, tel, oldPassword, newPassword, confirmNewPassword, profilePicture } = req.body;
 
     const user = await User.findById(req.user.id).select('+password');
     if (!user) {
@@ -19,6 +19,7 @@ exports.updateUser = async (req, res) => {
     user.name = name || user.name;
     user.email = email || user.email;
     user.tel = tel || user.tel;
+    user.profilePicture = profilePicture || user.profilePicture;
     // If password change is requested
     if (oldPassword || newPassword || confirmNewPassword) {
       if (!oldPassword || !newPassword || !confirmNewPassword) {
